@@ -55,6 +55,7 @@
     "moment": "^2.18.1",
     "npm-check-updates": "^2.11.0",
     "serve-static": "^1.12.2",
+    "tether": "^1.4.0",
     "webpack": "^2.5.0"
   },
   "dependencies": {

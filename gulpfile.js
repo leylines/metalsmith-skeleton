@@ -147,6 +147,22 @@ gulp.task('webpack', function(callback) {
       extensions: ['*','.js']
     },
     module: {
+      rules: [
+        {
+          test: require.resolve('jquery'),
+          use: [
+            { loader: 'expose-loader', options: 'jQuery' },
+            { loader: 'expose-loader', options: '$' }
+          ]
+        },
+    
+        {
+          test: require.resolve('tether'),
+          use: [
+            { loader: 'expose-loader', options: 'Tether' }
+          ]
+        }
+      ],
       loaders: [
         {
           test: /\.jsx?$/,
