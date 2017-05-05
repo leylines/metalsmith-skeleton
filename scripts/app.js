@@ -179,4 +179,3 @@ function init() {
         icon: image
     });
 }
->>>>>>> add basic layout
