@@ -183,3 +183,7 @@ function init() {
         icon: image
     });
 }
+<<<<<<< HEAD
+=======
+>>>>>>> add basic layout
+>>>>>>> add basic layout
