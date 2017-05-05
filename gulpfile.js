@@ -117,7 +117,8 @@ gulp.task('webpack', function(callback) {
   var webpackPlugins = [
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery"
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
     }),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'commons.chunk.js' }),
     new webpack.DefinePlugin({
