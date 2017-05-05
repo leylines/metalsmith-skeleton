@@ -58,5 +58,6 @@
   },
   "dependencies": {
     "normalize-scss": "^6.0.0"
+    "jquery": "^3.2.1"
   }
 }
