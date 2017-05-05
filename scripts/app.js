@@ -1,3 +1,1 @@
-(function() {
-  console.log("Hello!");
-})();
+require("expose?jQuery!jquery"); require("expose?Tether!tether");
