@@ -27,8 +27,8 @@ const pages = [
 module.exports = {
   site: {
     root,
-    url: "https://github.com/leylines/metalsmith-skeleton",
-    title: "Metalsmith Skeleton",
+    url: "https://github.com/leylines/metalsmith-skeleton#naturapraxis",
+    title: "Naturapraxis",
     author: "Joerg Roth",
     logo: 'logo.png'
   },
