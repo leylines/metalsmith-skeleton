@@ -174,7 +174,7 @@ gulp.task('scripts', ['webpack']);
 
 // Watch
 gulp.task('watch', ['default'], function() {
-  gulp.watch(['gulpfile.js', 'config.js'], ['default']);
+  gulp.watch(['gulpfile.js', 'config.js', 'data.js'], ['default']);
   gulp.watch([config.metalsmith.config.styleRoot+'/**/*'], ['styles']);
   gulp.watch([config.metalsmith.config.scriptRoot+'/**/*'], ['scripts']);
   gulp.watch([
