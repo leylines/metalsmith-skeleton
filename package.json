@@ -62,7 +62,6 @@
     "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^3.2.1",
     "normalize-scss": "^6.0.0",
-    "owl.carousel": "^2.2.0",
     "jquery.easing": "git@github.com:gdsmith/jquery.easing.git"
   }
 }
