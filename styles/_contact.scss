@@ -1,0 +1,44 @@
+#contact {
+  padding-top: 64px;
+  padding-bottom: 50px;
+
+  .success {
+    display: none;
+  }
+
+  .form {
+    text-align: center;
+    margin-top: 51px;
+    .input-field {
+      line-height: 49px;
+      width: 100%;
+      border: 1px solid #efefef;
+      border-radius: 4px;
+      text-align: center;
+      padding: 0 10px 0 10px;
+      margin-bottom: 24px;
+    }
+    textarea.input-field {
+      max-height: 225px;
+      line-height: 27px;
+      padding-top: 15px;
+    }
+    .standard-button {
+      margin-top: 17px;
+    }
+    ::-webkit-input-placeholder {
+      text-align: center;
+    }
+    :-moz-placeholder {
+      /* Firefox 18- */
+      text-align: center;
+    }
+    ::-moz-placeholder {
+      /* Firefox 19+ */
+      text-align: center;
+    }
+    :-ms-input-placeholder {
+      text-align: center;
+    }
+  }
+}

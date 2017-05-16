@@ -1,0 +1,39 @@
+#ueber-mich {
+  color: $main-dark;
+  padding-top: 64px;
+  padding-bottom: 75px;
+}
+
+.member-list {
+  margin-top: 25px;
+  .single-member {
+    margin-top: 25px;
+    background: #fff;
+    .member-pic {
+      position: relative;
+      display: inline-block;
+      border: 5px solid #ffffff;
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+    h6 {
+      margin-top: 5px;
+      margin-bottom: 0;
+    }
+    .extra-small-text {
+      margin-bottom: 12px;
+    }
+  }
+  .description {
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-top: 35px;
+    margin-top: 25px;
+    p {
+      margin-top: 20px;
+      margin-bottom: 53px;
+    }
+  }
+}

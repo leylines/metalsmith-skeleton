@@ -116,28 +116,12 @@ gulp.task('styles', function() {
 gulp.task('webpack', function(callback) {
   var webpackPlugins = [
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery",
-      Tether: "tether",
-      "window.Tether": "tether",
-      Alert: "exports-loader?Alert!bootstrap/js/dist/alert",
-      Button: "exports-loader?Button!bootstrap/js/dist/button",
-      Carousel: "exports-loader?Carousel!bootstrap/js/dist/carousel",
-      Collapse: "exports-loader?Collapse!bootstrap/js/dist/collapse",
-      Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
-      Modal: "exports-loader?Modal!bootstrap/js/dist/modal",
-      Popover: "exports-loader?Popover!bootstrap/js/dist/popover",
-      Scrollspy: "exports-loader?Scrollspy!bootstrap/js/dist/scrollspy",
-      Tab: "exports-loader?Tab!bootstrap/js/dist/tab",
-      Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
-      Util: "exports-loader?Util!bootstrap/js/dist/util",
-      "jquery.easing": "exports-loader?jquery.easing!/jquery.easing/jquery.easing.js",
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Tether: 'tether'
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'commons.chunk.js'
-    }),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', filename: 'commons.chunk.js' }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify(args.production ? 'production' : 'development')
@@ -153,7 +137,7 @@ gulp.task('webpack', function(callback) {
     context: path.join(__dirname, config.metalsmith.config.scriptRoot),
     entry: {
       app: './app.js',
-      vendor: ['jquery', 'jquery.easing', 'tether', 'bootstrap']
+      vendor: ['jquery', 'tether', 'owl.carousel']
     },
     output: {
       path: path.join(__dirname, config.metalsmith.config.assetRoot, 'assets'),
@@ -164,6 +148,27 @@ gulp.task('webpack', function(callback) {
       extensions: ['*','.js']
     },
     module: {
+      rules: [
+        {
+          test: require.resolve('jquery'),
+          use: [
+            { loader: 'expose-loader', options: 'jQuery' },
+            { loader: 'expose-loader', options: '$' }
+          ]
+        },
+        {
+          test: require.resolve('tether'),
+          use: [
+            { loader: 'expose-loader', options: 'Tether' }
+          ]
+        },
+        {
+          test: require.resolve('owl.carousel'),
+          use: [
+            { loader: 'expose-loader', options: 'imports?jQuery=jquery!owl.carousel' },
+          ]
+        }
+      ],
       loaders: [
         {
           test: /\.jsx?$/,
@@ -172,11 +177,7 @@ gulp.task('webpack', function(callback) {
           query: {
             presets: ['es2015']
           }
-        },
-        {
-          test: /bootstrap[\/\\]dist[\/\\]js[\/\\]umd[\/\\]/,
-          loader: 'imports-loader?jQuery=jquery'
-        },
+        }
       ]
     },
     plugins: webpackPlugins

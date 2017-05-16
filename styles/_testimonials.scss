@@ -1,0 +1,97 @@
+#testimonials {
+  background: url("../img/backgrounds/mountain.jpg") no-repeat top;
+  background-size: cover;
+  .color-overlay {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .single-feedback {
+    margin-top: 50px;
+    overflow: visible;
+    width: 100%;
+    .client-image {
+      position: relative;
+      margin-right: -15px;
+      img {
+        width: 100%;
+        display: block;
+        margin-top: 1px;
+      }
+    }
+    .feedback-content {
+      background-color: white;
+      margin-top: 43px;
+      margin-left: -15px;
+      padding: 25px 0 0 0;
+      .q-sign {
+        font-family: 'Libre Baskerville', 'Playfair Display', Georgia, serif;
+        font-weight: 700;
+        font-size: 337px;
+        color: #e0e0e0;
+        opacity: 0.3;
+        position: absolute;
+      }
+      .top {
+        top: 200px;
+        left: 10px;
+      }
+      .bottom {
+        bottom: -75px;
+        right: 15px;
+      }
+      blockquote {
+        border: none;
+        padding-left: 60px;
+        padding-right: 60px;
+        margin-bottom: 0;
+        p {
+          font-size: 15px;
+          color: #660066;
+        }
+        cite {
+          margin-top: 30px;
+          margin-bottom: 20px;
+          font-style: normal;
+          .client-image {
+            max-width: 100px;
+            float: left;
+            margin-right: 20px;
+          }
+          .client-details {
+            float: left;
+          }
+          .signature {
+            margin-bottom: 20px;
+            img {
+              max-height: 31px;
+            }
+          }
+          h6 {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .owl-carousel .owl-wrapper-outer {
+    margin-bottom: -30px;
+  }
+  .owl-theme .owl-controls {
+    text-align: right;
+    position: relative;
+    z-index: 10;
+    margin-top: 5px;
+    .owl-page {
+      span {
+        border: 2px solid #fff;
+      }
+      &.active span {
+        border: 3px solid #000000;
+      }
+    }
+    &.clickable .owl-page:hover span {
+      border: 3px solid #000000;
+    }
+  }
+}
+
