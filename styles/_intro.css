@@ -1,8 +1,4 @@
 #intro {
-  color: $main-dark;
-  padding-top: 64px;
-  padding-bottom: 64px;
-  background-color: $main-light;
   .featured-image {
     position: relative;
     width: 100%;
@@ -12,25 +8,27 @@
     }
   }
   .box {
-    background: #ffffff;
     position: relative;
-    margin-top: 75px;
+    margin-top: 50px;
     z-index: 10;
     overflow: hidden;
     .content {
-      padding-top: 60px;
-      padding-left: 82px;
-      padding-right: 82px;
+      padding-top: 50px;
+      padding-left: 50px;
+      padding-right: 50px;
     }
     p {
       margin-top: 22px;
-      margin-bottom: 100px;
+      margin-bottom: 50px;
       position: relative;
     }
   }
   .overflow-box {
-    margin-left: -200px;
+    margin-left: -110px;
     position: relative;
     z-index: 10;
+    @media (max-width: 991px) {
+      margin-left: 0;
+    }
   }
 }

@@ -79,6 +79,11 @@ gulp.task('metalsmith', function(callback) {
   setupMetalsmith(callback);
 });
 
+gulp.task('fonts', function() {
+  return gulp.src('node_modules/font-awesome/fonts/*')
+    .pipe(gulp.dest('sources/fonts'))
+})
+
 // Vendor
 gulp.task('vendor-scripts', function() {
   return gulp.src(config.vendor.scripts)
@@ -98,7 +103,7 @@ gulp.task('vendor', ['vendor-scripts', 'vendor-styles']);
 
 // Styles
 gulp.task('styles', function() {
-  return gulp.src(path.join(__dirname, config.metalsmith.config.styleRoot, 'app.scss'))
+  return gulp.src(path.join(__dirname, config.metalsmith.config.styleRoot, '*.scss'))
     .pipe(sass({
       sourceComments: args.production ? false : true,
       outputStyle: args.production ? 'compressed' : 'expanded',
@@ -241,4 +246,4 @@ gulp.task('images', function() {
     .pipe(gulp.dest(imageDst));
 });
 
-gulp.task('default', ['vendor', 'scripts', 'styles', 'images', 'metalsmith']);
+gulp.task('default', ['vendor', 'scripts', 'styles', 'images', 'fonts', 'metalsmith']);

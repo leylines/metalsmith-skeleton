@@ -6,8 +6,13 @@ $font-family: "'poppins', helvetica, sans-serif";
 
 // Main Colors
 
+$bg-primary: rgb(255,224,255);
+$color-primary: rgb(66,0,66);
+$alpha: .6;
+$color-primary-alpha: rgba($color-primary, $alpha);
+
 $main-dark: rgb(66,00,66);
-$alpha: .65;
+$alpha: .6;
 $main-dark-alpha: rgba($main-dark, $alpha);
 
 $main-light: rgb(255,224,255);

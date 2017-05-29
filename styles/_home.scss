@@ -1,0 +1,28 @@
+#home {
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 100px 0;
+  text-align: center;
+  background: url(../img/backgrounds/flower.jpg) no-repeat bottom center;
+  background-attachment: fixed;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .color-overlay {
+    background: $main-dark-alpha;
+  }
+  .intro-body {
+    h1,h3,h6 {
+      color: $main-light;
+    }
+    display: table-cell;
+    vertical-align: middle;
+  }
+  @media(min-width:768px) {
+    height: 100%;
+    padding: 0;
+  }
+}

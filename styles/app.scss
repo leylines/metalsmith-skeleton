@@ -1,27 +1,22 @@
-@import 'normalize-scss/sass/normalize';
-@import 'owl.carousel/src/scss/owl.carousel';
-@import 'owl.carousel/src/scss/owl.theme.default';
 @import "variables";
 @import "mixins";
+@import "insets";
+@import "navigation";
+@import "home";
 @import "intro";
 @import "leitbild";
 @import "angebot";
-@import "ueber_mich";
+@import "about";
 @import "praxis";
+@import "praxis2";
 @import "testimonials";
 @import "newsletter";
 @import "contact";
 @import "footer";
 
-body {
-  width: 100%;
-  height: 100%;
-  font-family: $font-family;
-  color: $main-dark;
-  background-color: $main-light;
-  position: relative;
-  text-align: center;
-  overflow-x: hidden !important;
+*, *::before, *::after
+{
+  box-sizing: border-box;
 }
 
 html {
@@ -31,10 +26,59 @@ html {
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $font-family;
+  font-size: 15px;
+  line-height: 27px;
+  text-align: center;
+  overflow-x: hidden !important;
+}
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  postition: relative;
+}
+
+.bg-primary {
+  background-color: $bg-primary !important;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: $color-primary;
+  }
+}
+
+.bg-secondary {
+  background-color: white;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: $color-primary !important;
+  }
+}
+
+.bg-inverse {
+  background-color: $color-primary !important;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: $bg-primary;
+  }
 }
 
 h1 {
@@ -70,11 +114,9 @@ h6 {
 }
 
 p {
-    margin: 0 0 25px;
     font-size: 16px;
     line-height: 1.5;
-    @media(min-width: 768px) {
-        margin: 0 0 35px;
+    @media(min-width: 992) {
         font-size: 18px;
         line-height: 1.6;
     }
@@ -92,6 +134,14 @@ a {
     }
 }
 
+.container-fluid
+{
+  padding-right: 75px;
+  padding-left: 75px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .white-bg {
   background: #ffffff;
 }
@@ -100,9 +150,14 @@ a {
   background-attachment: fixed;
 }
 
-.color-overlay {
-  background: $main-dark-alpha;
-} 
+.section-heading {
+  position: relative;
+  z-index: 10;
+}
+
+section {
+  position: relative;
+}
 
 .section-header {
   position: relative;
@@ -110,8 +165,13 @@ a {
   margin-bottom: 25px;
 }
 
+.sub-heading {
+  font-size: 18px;
+  margin-top: 13px;
+}
+
 .image-border {
-  box-shadow: inset 0 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 5px rgba(0, 0, 0, 0.2);
   position: absolute;
   top: 0;
   left: 0;
@@ -128,6 +188,25 @@ a {
 
 .diffuse-shadow {
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.05);
+}
+
+.bottom-gradient {
+  display: block;
+  width: 100%;
+  border: solid 0px #CCC;
+  border-bottom: none;
+  position: relative;
+  float: left;
+  &:after {
+    content:"";
+    background: -webkit-linear-gradient(left, rgba(66, 0, 66, 1) 0%, rgba(99, 0, 99, 1) 12%, rgba(204, 0, 204, 1) 47%, rgba(255, 0, 255, 1) 100%);
+    display: block;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+  }
 }
 
 .dark-purple-line-bottom {
@@ -176,141 +255,6 @@ a {
   transition: all ease 0.25s;
 }
 
-#mainNav {
-    margin-bottom: 0;
-    border-bottom: 1px solid fade-out(white, 0.7);
-    font-family: $font-family;
-    background-color: $main-dark;
-    .navbar-toggler {
-        color: white;
-        font-size: 14px;
-        border: 1px solid white;
-        padding: 11px;
-    }
-    .navbar-brand {
-        font-weight: 700;
-    }
-    a {
-        color: white;
-    }
-    .navbar-nav {
-        .nav-item {
-            -webkit-transition: background .3s ease-in-out;
-            -moz-transition: background .3s ease-in-out;
-            transition: background .3s ease-in-out;
-            &:hover {
-                color: fade(white, 80%);
-                outline: none;
-                background-color: transparent;
-            }
-            &:focus,
-            &:active {
-                outline: none;
-                background-color: transparent;
-            }
-        }
-    }
-    @media(min-width:768px) {
-        padding: 20px 0;
-        border-bottom: none;
-        letter-spacing: 1px;
-        background: transparent;
-        -webkit-transition: background .25s ease-in-out, padding .25s ease-in-out;
-        -moz-transition: background .25s ease-in-out, padding .25s ease-in-out;
-        transition: background .25s ease-in-out, padding .25s ease-in-out;
-        &.navbar-shrink {
-            padding: 10px 0;
-            background: $main-dark;
-            border-bottom: 1px solid fade-out(white, 0.7);
-        }
-        .nav-link.active {
-            outline: none;
-            background-color: rgba(white, 0.3);
-            &:hover {
-                color: white;
-            }
-        }
-    }
-}
-
-#home {
-    display: table;
-    width: 100%;
-    height: auto;
-    padding: 100px 0;
-    text-align: center;
-    color: white;
-    background: url(../img/backgrounds/flower.jpg) no-repeat bottom center scroll;
-    background-color: black;
-    .image-overlay {
-      background: url(../img/icon.svg) no-repeat center;
-      background-size: contain;
-      background-origin: content-box;
-    }
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    .intro-body {
-        display: table-cell;
-        vertical-align: middle;
-        .brand-heading {
-            font-size: 40px;
-        }
-        .intro-text {
-            font-size: 18px;
-        }
-    }
-    @media(min-width:768px) {
-        height: 100%;
-        padding: 0;
-        .intro-body {
-            .brand-heading {
-                font-size: 100px;
-            }
-            .intro-text {
-                font-size: 22px;
-            }
-        }
-    }
-}
-
-.content-section {
-    padding-top: 100px;
-}
-
-.download-section {
-    width: 100%;
-    padding: 50px 0;
-    color: white;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-    background-color: black;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
-
-#map {
-    width: 100%;
-    height: 200px;
-    margin-top: 100px;
-}
-
-@media(min-width:767px) {
-    .content-section {
-        padding-top: 250px;
-    }
-    .download-section {
-        padding: 100px 0;
-    }
-    #map {
-        height: 350px;
-        margin-top: 250px;
-    }
-}
-
 .btn {
     text-transform: uppercase;
     font-family: $font-family;
@@ -332,6 +276,87 @@ a {
         color: black;
         background-color: $primary;
     }
+}
+
+.standard-button {
+  padding: 0 40px 0 40px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 30px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  line-height: 50px;
+  border: none;
+  box-shadow: none;
+}
+
+.dark-purple-button {
+  color: #ffffff;
+  background: #660066;
+  &:hover {
+    background-color: #990099;
+    color: #ffffff;
+    outline: none;
+  }
+  &:active {
+    background-color: #990099;
+    color: #ffffff;
+    outline: none;
+    &:hover {
+      background-color: #990099;
+      color: #ffffff;
+      outline: none;
+    }
+  }
+  &:focus {
+    &:hover {
+      background-color: #990099;
+      color: #ffffff;
+      outline: none;
+    }
+    background-color: #990099;
+    color: #ffffff;
+    outline: none;
+  }
+}
+
+.dark-purple-outline {
+  color: #660066;
+  background: #fff;
+  border: 2px solid #660066;
+  line-height: 46px;
+  padding: 0 38px 0 38px;
+  &:hover {
+    background-color: #660066;
+    color: #ffffff;
+    outline: none;
+    border: 2px solid #660066;
+  }
+  &:active {
+    background-color: #660066;
+    color: #ffffff;
+    outline: none;
+    border: 2px solid #660066;
+    &:hover {
+      background-color: #660066;
+      color: #ffffff;
+      outline: none;
+      border: 2px solid #660066;
+    }
+  }
+  &:focus {
+    &:hover {
+      background-color: #660066;
+      color: #ffffff;
+      outline: none;
+      border: 2px solid #660066;
+    }
+    background-color: #660066;
+    color: #ffffff;
+    outline: none;
+    border: 2px solid #660066;
+  }
 }
 
 ul.banner-social-buttons {

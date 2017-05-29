@@ -1,96 +1,89 @@
 #testimonials {
-  background: url("../img/backgrounds/mountain.jpg") no-repeat top;
+  padding-top: 2.8125rem;
+
+  @media (min-width: 768px) {
+    padding-top: 5.625rem;
+  }
+  background: #663fb5 url(../img/backgrounds/mountain.jpg) no-repeat center bottom;
   background-size: cover;
-  .color-overlay {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  .single-feedback {
-    margin-top: 50px;
-    overflow: visible;
-    width: 100%;
-    .client-image {
-      position: relative;
-      margin-right: -15px;
-      img {
-        width: 100%;
+
+  .blockquote {
+    margin: 0 auto 2rem;
+    border-left: 0 none;
+    @media (min-width: 768px) {
+      max-width: 60rem;
+      margin-bottom: 4.5rem;
+    }
+    > img {
+      margin-bottom: 1.5625rem;
+      border: 3px solid $main-light;
+    }
+    p {
+      margin-bottom: .9375rem;
+      font-weight: 400;
+      line-height: 1.464;
+      &:before {
+        content: '\201c';
+      }
+      &:after {
+        content: '\201d';
+      }
+    }
+    footer {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.1875;
+      color: #fff; 
+      &:before {
+        content: '';
+      } 
+      &:after {
         display: block;
-        margin-top: 1px;
-      }
-    }
-    .feedback-content {
-      background-color: white;
-      margin-top: 43px;
-      margin-left: -15px;
-      padding: 25px 0 0 0;
-      .q-sign {
-        font-family: 'Libre Baskerville', 'Playfair Display', Georgia, serif;
-        font-weight: 700;
-        font-size: 337px;
-        color: #e0e0e0;
-        opacity: 0.3;
-        position: absolute;
-      }
-      .top {
-        top: 200px;
-        left: 10px;
-      }
-      .bottom {
-        bottom: -75px;
-        right: 15px;
-      }
-      blockquote {
-        border: none;
-        padding-left: 60px;
-        padding-right: 60px;
-        margin-bottom: 0;
-        p {
-          font-size: 15px;
-          color: #660066;
-        }
-        cite {
-          margin-top: 30px;
-          margin-bottom: 20px;
-          font-style: normal;
-          .client-image {
-            max-width: 100px;
-            float: left;
-            margin-right: 20px;
-          }
-          .client-details {
-            float: left;
-          }
-          .signature {
-            margin-bottom: 20px;
-            img {
-              max-height: 31px;
-            }
-          }
-          h6 {
-            margin-bottom: 0;
-          }
-        }
+        width: 2.5rem;
+        height: 1px;
+        margin: .625rem auto 0;
+        content: '';
+        background-color: rgba(255, 255, 255, .25);
       }
     }
   }
-  .owl-carousel .owl-wrapper-outer {
-    margin-bottom: -30px;
-  }
-  .owl-theme .owl-controls {
-    text-align: right;
-    position: relative;
-    z-index: 10;
-    margin-top: 5px;
-    .owl-page {
-      span {
-        border: 2px solid #fff;
-      }
-      &.active span {
-        border: 3px solid #000000;
-      }
+
+  .carousel-indicators {
+    position: inherit;
+    bottom: auto;
+    left: auto;
+    width: auto;
+    margin: 0 0 2.1875rem;
+    img {
+      width: 45px;
+      height: 45px;
+      margin: 5.5px auto 0;
+      border: 2px solid $main-dark;
+      transition: all .1s ease-in-out;
     }
-    &.clickable .owl-page:hover span {
-      border: 3px solid #000000;
+    li {
+      width: 60px;
+      height: 60px;
+      margin: 0;
+      text-indent: inherit;
+      border: 0;
+      border-radius: 0;
+      opacity: .5;
+      transition: opacity .2s;
+      &:hover {
+        opacity: .9;
+      }
+      &.active {
+        margin: 0;
+        background-color: transparent;
+        opacity: 1;
+        img {
+          width: 56px;
+          height: 56px;
+          margin-top: 0;
+          border: 2px solid $main-light;
+        }
+      }
     }
   }
 }

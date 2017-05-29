@@ -1,7 +1,11 @@
 #ueber-mich {
   color: $main-dark;
+  background-color: $main-dark;
   padding-top: 64px;
-  padding-bottom: 75px;
+  padding-bottom: 64px;
+  h2 {
+    color: $main-light;
+  }
 }
 
 .member-list {

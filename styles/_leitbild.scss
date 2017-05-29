@@ -1,21 +1,11 @@
 #leitbild {
-  position: relative;
-  padding-top: 64px;
-  padding-bottom: 64px;
   .thema {
-    background-color: white;
-    color: $main-dark;
-    padding-left: 28px;
-    padding-right: 28px;
-    padding-top: 60px;
-    margin-top: 50px;
-    .icon {
-      font-size: 55px;
-      margin-bottom: 20px;
-      p {
-        margin-top: 20px;
-        margin-bottom: 53px;
-      }
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    p {
+      margin-bottom: 2rem;
     }
   }
 }
